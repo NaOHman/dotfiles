@@ -1,0 +1,85 @@
+#! /bin/bash
+
+source $(dirname $0)/config.sh
+
+function make_wm_infos {
+    wm_infos=""
+    if [[ ${#music_info} -lt 29 ]]; then
+        offset=$(expr 29 - ${#music_info})
+        left=$(expr $offset / 2)
+        right=$(expr $offset - $left)
+        roff=$(printf "%${right}s")
+        loff=$(printf "%${left}s")
+        music_info="$roff$music_info$loff"
+        start=0
+    else
+        start=$(expr ${#music_info} - 29)
+        start=$(expr $start / 2)
+    fi
+    wm_infos=${music_info:0:start}
+    for i in {0..9}; do
+        wm_infos="$wm_infos${colors[i]}%{+u}${music_info:start:2}%{-u}${music_info:start+2:1}"
+        start=$(expr $start + 3)
+    done
+    wm_infos="$wm_infos${music_info:start}"
+}
+
+while read -r line ; do
+    case $line in
+        T*)
+            time_info=${line#?}
+            ;;
+        I*)
+            wifi_info=${line#?}
+            ;;
+        B*)
+            battery_info=${line#?}
+            ;;
+        V*)
+            volume_info=${line#?}
+            ;;
+        P*)
+            pacman_info=${line#?}
+            ;;
+        M*)
+            mail_info=${line#?}
+            ;;
+        F*)
+            weather_info=${line#?}
+            ;;
+        S*)
+            music_info=${line#?}
+            ;;
+        W*)
+            set -- ${line#?}
+            count=0
+            while [ $# -gt 0 ] ; do
+                item=$1
+                case $item in
+                    a)
+                        # active desktop
+                        colors[$count]=$ACTIVE
+                        ;;
+                    o)
+                        # inactive but occupied desktop
+                        colors[$count]=$OCCUPIED
+                        ;;
+                    i)
+                        # inactive desktop
+                        colors[$count]=$INACTIVE
+                        ;;
+                    u)
+                        # urgent desktop
+                        colors[$count]=$URGENT
+                        ;;
+                esac
+                count=$(expr $count + 1)
+                shift
+            done
+            ;;
+    esac
+    make_wm_infos
+    printf "%s\n" "$time_info$weather_info$pacman_info$mail_info%{c}$wm_infos%{r}$wifi_info$volume_info$battery_info"
+done
+
+

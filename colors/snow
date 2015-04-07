@@ -1,0 +1,19 @@
+*foreground: #313131
+URxvt*background: #f0f0f0
+
+*color0:	#252525
+*color1:	#ba7373
+*color2:	#739456
+*color3:	#a4712e
+*color4:	#25414f
+*color5:	#6f4f70
+*color6:	#3c6f69
+*color7:	#ffffff
+*color8:	#666666
+*color9:	#c14b4b
+*color10:	#6ca318
+*color11:	#7f672e
+*color12:	#537595
+*color13:	#a971a7
+*color14:	#70999a
+*color15:	#cacaca

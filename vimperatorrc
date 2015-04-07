@@ -1,0 +1,21 @@
+"3.8.3 (created: 2014/11/09 13:19:01)
+
+source! /home/jeffrey/.vimperatorrc.local
+colorscheme forest
+
+set gui=none,tabs
+highlight Hint font-size:150%
+set hintchars=abcdefghijklmnopqrstuvwxyz
+map b :back<CR>
+map B :forward<CR>
+noremap H gT
+noremap L gt
+noremap J    :js liberator.plugins.smooziee.smoothScrollBy(600)<CR>
+noremap K    :js liberator.plugins.smooziee.smoothScrollBy(-600)<CR>
+
+inoremap <C-a> <Insert><C-a><Insert>
+
+let g:smooziee_scroll_amount="100"
+let g:smooziee_scroll_interval="25"
+
+" vim: set ft=vimperator:

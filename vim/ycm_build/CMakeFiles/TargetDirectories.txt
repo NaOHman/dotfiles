@@ -1,0 +1,10 @@
+/home/jeffrey/.vim/ycm_build/BoostParts/CMakeFiles/BoostParts.dir
+/home/jeffrey/.vim/ycm_build/ycm/tests/CMakeFiles/copy_testdata.dir
+/home/jeffrey/.vim/ycm_build/ycm/tests/gmock/CMakeFiles/gmock.dir
+/home/jeffrey/.vim/ycm_build/ycm/tests/gmock/CMakeFiles/gmock_main.dir
+/home/jeffrey/.vim/ycm_build/ycm/tests/gmock/gtest/CMakeFiles/gtest.dir
+/home/jeffrey/.vim/ycm_build/ycm/tests/gmock/gtest/CMakeFiles/gtest_main.dir
+/home/jeffrey/.vim/ycm_build/ycm/CMakeFiles/ycm_client_support.dir
+/home/jeffrey/.vim/ycm_build/ycm/CMakeFiles/ycm_core.dir
+/home/jeffrey/.vim/ycm_build/ycm/tests/CMakeFiles/ycm_core_tests.dir
+/home/jeffrey/.vim/ycm_build/ycm/CMakeFiles/ycm_support_libs.dir

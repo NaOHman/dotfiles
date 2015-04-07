@@ -1,0 +1,3 @@
+amixer set Master $1
+mplayer /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga &
+~/.config/panel/volume.sh kick

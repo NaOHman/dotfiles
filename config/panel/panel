@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cd $(dirname $0)
+source ./config.sh
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
+
+trap "trap - TERM; kill 0" INT TERM QUIT EXIT
+
+./email.sh >$PANEL_FIFO &
+./volume.sh >$PANEL_FIFO &
+./battery.sh >$PANEL_FIFO &
+./wifi.sh >$PANEL_FIFO &
+./weather.sh>$PANEL_FIFO &
+./pacman.sh> $PANEL_FIFO &
+./music.sh> $PANEL_FIFO &
+./date.sh>$PANEL_FIFO &
+cat $PANEL_FIFO | ./display | bar -B $BAR_BG -F $BAR_FG -g $BAR_GEO -u $BAR_UH

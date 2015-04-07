@@ -1,0 +1,43 @@
+hi Normal               color:#5c3809; "colorFG
+hi Normal               background: #F5D3A6; "colorBG
+hi CmdLine              background: #F5D3A6; "colorBG 
+hi CompGroup            background: #F5D3A6; "colorBG
+hi CompTitle            background: #F5D3A6; "colorBG
+hi CmdLine              color:#5c3809; "colorFG
+hi CompGroup            color:#5c3809; "colorFG
+hi CompTitle            color:#5c3809; "colorFG
+hi CompTitle            font-weight: bold;
+
+hi CompTitle>*          color: #422402; padding: 1px 0.5ex; "color0
+hi CompItem             color:#5c3809; "colorFG
+hi CompItem             background:#F5D3A6; "colorBG
+hi CompItem[selected]   color: #F5D3A6; "colorBG
+hi CompItem[selected]   background: #D27B0E; "color3
+hi CompDesc             width: 500px; max-width: 500px; color: #a07230; "color11
+hi CompMsg              margin-left: 16px;
+hi ErrorMsg             background: #b28d92; color: #d9e6f2; font-weight: bold;
+hi Filter               color: #422402;  "color0
+hi Filter               background: #D27B0E; "color3
+hi StatusLine           color: #a07230; background: transparent; font-weight: normal; "color11
+hi Hint                 font-family: monospace; font-size: 10px; font-weight: bold; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+hi Hint::after          content: attr(number);
+hi HintActive           background-color: #826114; color: black; "color2
+hi HintElem             background-color: #D27B0E; color: black; "color3
+hi HintImage            opacity: .5;
+hi URL                  text-decoration: none; color: #826114; "color2
+hi ModeMsg              color: white; background: #5c3809; border-radius: 1px; padding: 0px 5px; "color10
+hi PromptText           color: white; background: #838766; "color4
+hi MoreMsg              background-color: #F5D3A6; "colorBG 
+hi MoreMsg              background-color: #5c3809; "colorFG
+hi Tag                  color: #848758; "color6
+hi InfoMsg              background: #F5D3A6; "colorBG
+hi WarningMsg           background: #F5D3A6; "colorBG
+hi InfoMsg              color: #826114; "color2
+hi WarningMsg           color: #bb3915; "color1
+hi Null                 color: #c17f5c; "color5
+hi Number               color: #838766; "color4
+hi NonText              color: #feb29a; min-height: 16px; padding-left: 2px; "color13
+hi Title                color: #c17f5c; "color5
+hi Title                background-color: #feb29a; font-weight: bold; "color13
+hi Indicator            color: #feb29a; "color13
+hi ContentSeparator     border-top: 1px solid #262426; display: -moz-box; 

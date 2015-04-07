@@ -1,0 +1,49 @@
+#!/bin/bash
+
+WIFI_DEV="wlp2s0"
+WU_KEY="7a07c8234eb31985"
+WU_LOCATION="RU/Saint_Petersburg"
+UNAME="NOPE@NOPE.COM"
+PASS="NOPENOPENOPE"
+SLEEP_TIME=2
+WEATHER_TIME=600
+UPDATE_TIME=600
+EMAIL_TIME=600
+ROOT_DIR="/home/jeffrey/.config/bspwm/panel"
+
+COLOR1="#bb3915" #color1
+COLOR2="#826114" #color2
+COLOR3="#D27B0E" #color3
+COLOR4="#838766" #color4
+COLOR5="#c17f5c" #color5
+COLOR6="#848758" #color6
+COLOR7="#*color7: #9E1ED" #color7
+COLOR8="#281200" #color8
+COLOR9="#a43406" #color9
+COLOR10="#5c3809" #color10
+COLOR11="#a07230" #color11
+COLOR12="#ae8145" #color12
+COLOR13="#feb29a" #color13
+COLOR14="#c99A59" #color14
+COLOR15="#F5D3A6" #color15
+COLORFG="#5c3809" #colorFG
+COLORBG="#F5D3A6" #colorBG
+
+BAR_GEO="1318x24+24+24"
+BAR_UH="4"
+BAR_BG="#ff${COLORBG:1}"
+BAR_FG="#ff${COLORFG:1}"
+
+TIME_COL="#ff${COLOR1:1}"
+WEATHER_COL="#ff${COLOR9:1}"
+PAC_COL="#ff${COLOR3:1}"
+EMAIL_COL="#ff${COLOR2:1}"
+WIFI_COL="#ff${COLOR6:1}"
+VOL_COL="#ff${COLOR4:1}"
+BAT_COL="#ff${COLOR5:1}"
+
+ACTIVE="%{U#FF${COLOR1:1}}"
+URGENT="%{U#ff${COLOR9:1}}"
+OCCUPIED="%{U#FF${COLOR4:1}}"
+INACTIVE="%{U#FF${COLORFG:1}}"
+

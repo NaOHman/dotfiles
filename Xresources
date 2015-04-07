@@ -1,0 +1,26 @@
+#include "/home/jeffrey/.colors/flower"
+
+URxvt*depth:	32
+URxvt*scrollBar:	false
+Xft.dpi:	96
+Xft.antialias:	true
+Xft.rgba:	rgb
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.lcdfilter:	lcddefault
+urxvt*perl-ext-common:	default,matcher,font-size
+urxvt*url-launcher:	/bin/firefox
+urxvt*matcher.button:	1
+urxvt*keysym.C-Up:	perl:font-size:increase
+urxvt*keysym.C-Down:	perl:font-size:decrease
+urxvt*keysym.C-S-Up:	perl:font-size:inglobal
+urxvt*keysym.C-S-Down:	perl:font-size:decglobal
+URxvt*cursorUnderline:	true
+URxvt*colorUL:	#9695b5
+
+URxvt*font:	xft:Inconsolata for Powerline:size=9
+xterm*font:	xft:Inconsolata for Powerline:size=9
+
+URxvt.iso14755:	false
+URxvt.iso14755_52:	false
