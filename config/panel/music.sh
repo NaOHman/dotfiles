@@ -22,7 +22,7 @@ function get_music {
     fi
 }
 
-if [[ 1 -eq "kick" ]] ; then
+if [[ $1 -eq "kick" ]] ; then
     get_music
     echo "S$MUSIC_PLAYING" > $PANEL_FIFO
 else 
