@@ -66,7 +66,7 @@ myActive   = "#f2d1ba" -- color8
 myInactive = "#bea492" -- color10
 
 -- Width of the window border in pixels.
-myBorderWidth = 5
+myBorderWidth = 4
 
 ------------------------------------------------------------------------
 -- Key bindings
@@ -87,7 +87,7 @@ myLogHook fd = dynamicLogWithPP def
 
 myFloatDec = simplestDec myIgnores myTheme
     where myIgnores = [ isFullscreen
-                      , className =? "Synapse"
+                      , className =? "lighthouse"
                       , className =? "Nautilus"
                       ] 
 
@@ -110,7 +110,6 @@ myNavConf = def { layoutNavigation = [("BSP", centerNavigation)] }
 main = do
     fifo <- getEnv "PANEL_FIFO"
     pipe <- openFd fifo WriteOnly Nothing defaultFileFlags
-    {-nScreens  <- countScreens-}
     xmonad $ withNavigation2DConfig myNavConf $ defaults {
           logHook         = myLogHook pipe -- >> myFloatHook
         , manageHook      = myManageHook 
@@ -142,10 +141,9 @@ defaults = def {
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Launchers
   [ sup      xK_z $ spawn $ XMonad.terminal conf
-  , sup      xK_c $ spawn "firefox"
-  , sup      xK_o $ spawn "synapse"
-  , sup      xK_g $ spawn "nautilus"
-  , sup      xK_i $ spawn "systemctl restart netctl-auto@wlp2s0.service"
+  , sup      xK_c $ spawn "/usr/bin/google-chrome"
+  , sup      xK_o $ spawn "/usr/local/bin/lighthouse | /bin/sh"
+  , sup      xK_g $ spawn "/usr/bin/nautilus"
   , supShift xK_z $ spawn "/usr/bin/urxvt"
 
   -- Music control keys
@@ -166,6 +164,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , sup      xK_q      $ restart "xmonad" True
   , sup      xK_m      $ windows W.swapDown
   , sup      xK_n      $ windows W.swapUp
+  , sup      xK_b      $ spawn "i3lock"
   , sup      xK_s      $ sendMessage Swap
   , sup      xK_v      $ sendMessage Rotate
   , sup      xK_Up     $ sendMessage MoreSpacing
@@ -174,6 +173,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , sup      xK_space  $ sendMessage NextLayout
   , sup      xK_comma  $ sendMessage (IncMasterN 1)
   , sup      xK_period $ sendMessage (IncMasterN (-1))
+  , sup      xK_Return $ spawn "/usr/bin/i3lock"
   , supShift xK_q      $ io exitSuccess
   , supShift xK_space  $ setLayout $ XMonad.layoutHook conf
   ]
